@@ -1,0 +1,40 @@
+--- a/xfce4-session/xfsm-logout-dialog.c
++++ b/xfce4-session/xfsm-logout-dialog.c
+@@ -307,37 +307,6 @@
+     }
+ 
+   /**
+-   * Hibernate
+-   *
+-   * Hide the button if UPower is not installed or system cannot suspend
+-   **/
+-  if (!upower_not_found
+-      && xfconf_channel_get_bool (channel, "/shutdown/ShowHibernate", TRUE))
+-    {
+-      if (xfsm_shutdown_can_hibernate (dialog->shutdown, &can_hibernate, &auth_hibernate, &error))
+-        {
+-          if (can_hibernate)
+-            {
+-              button = xfsm_logout_dialog_button (_("_Hibernate"), "system-hibernate",
+-                                                  "xfsm-hibernate", XFSM_SHUTDOWN_HIBERNATE,
+-                                                  dialog);
+-
+-              gtk_box_pack_start (GTK_BOX (hbox), button, TRUE, TRUE, 0);
+-              gtk_widget_set_sensitive (button, auth_hibernate);
+-              gtk_widget_show (button);
+-
+-              gtk_widget_show (hbox);
+-            }
+-        }
+-      else
+-        {
+-          g_printerr ("%s: Querying hibernate failed: %s\n\n",
+-                      PACKAGE_NAME, ERROR_MSG (error));
+-          g_clear_error (&error);
+-        }
+-    }
+-
+-  /**
+    * Save session
+    **/
+   if (xfsm_shutdown_can_save_session (dialog->shutdown)

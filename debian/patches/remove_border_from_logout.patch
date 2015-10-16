@@ -1,0 +1,11 @@
+--- a/xfce4-session/xfsm-logout-dialog.c
++++ b/xfce4-session/xfsm-logout-dialog.c
+@@ -691,8 +691,6 @@
+                              "type", GTK_WINDOW_POPUP,
+                              "screen", screen, NULL);
+ 
+-      xfsm_window_add_border (GTK_WINDOW (dialog));
+-
+       gtk_widget_realize (dialog);
+       gdk_window_set_override_redirect (dialog->window, TRUE);
+       gdk_window_raise (dialog->window);
