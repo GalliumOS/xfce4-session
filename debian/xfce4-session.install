@@ -1,0 +1,4 @@
+usr
+etc
+debian/defaults.list etc/xfce4/
+debian/55xfce4-session etc/X11/Xsession.d/

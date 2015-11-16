@@ -1,0 +1,10 @@
+#!/bin/sh -e
+
+if [ "$1" = "remove" ] || [ "$1" = "disappear" ]; then
+  update-alternatives --remove x-session-manager /usr/bin/xfce4-session 
+  update-alternatives --remove x-session-manager /usr/bin/startxfce4
+fi
+
+#DEBHELPER#
+
+exit 0

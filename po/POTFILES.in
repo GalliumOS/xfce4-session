@@ -1,0 +1,33 @@
+# List of source files containing translatable strings.
+
+xfce.desktop.in
+engines/balou/balou-theme.c
+engines/balou/config.c
+engines/mice/mice.c
+engines/simple/simple.c
+scripts/xscreensaver.desktop.in
+settings/main.c
+settings/session-editor.c
+settings/splash-settings.c
+settings/xfae-dialog.c
+settings/xfae-model.c
+settings/xfae-window.c
+xfce4-session/main.c
+xfce4-session/xfsm-chooser.c
+xfce4-session/xfsm-client.c
+xfce4-session/xfsm-compat-gnome.c
+xfce4-session/xfsm-compat-kde.c
+xfce4-session/xfsm-dns.c
+xfce4-session/xfsm-manager.c
+xfce4-session/xfsm-logout-dialog.c
+xfce4-session/xfsm-splash-screen.c
+xfce4-session/xfsm-startup.c
+xfce4-session/xfsm-shutdown.c
+xfce4-session/xfsm-upower.c
+xfce4-session-logout/main.c
+xfce4-session-logout/xfce4-session-logout.desktop.in
+xfce4-session/org.xfce.session.policy.in2
+
+# files added by intltool-prepare.
+settings/xfce-session-settings.desktop.in
+settings/xfce4-session-settings.glade

@@ -1,0 +1,10 @@
+--- a/xfce4-session/xfsm-logout-dialog.c
++++ b/xfce4-session/xfsm-logout-dialog.c
+@@ -228,6 +228,7 @@
+   gtk_box_pack_start (GTK_BOX (hbox), button, TRUE, TRUE, 0);
+   gtk_widget_show (button);
+   gtk_widget_grab_focus (button);
++  gtk_widget_set_state (button, GTK_STATE_PRELIGHT);
+ 
+   /**
+    * Reboot

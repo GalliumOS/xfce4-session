@@ -1,0 +1,16 @@
+description "XFCE4 session"
+author "Stéphane Graber <stgraber@ubuntu.com>"
+
+start on started dbus and (xsession SESSION=xfce or xsession SESSION=xubuntu or xsession SESSION=ubuntustudio or xsession SESSION=mythbuntu)
+
+emits desktop-start
+emits desktop-end
+
+exec startxfce4
+
+post-start exec initctl emit desktop-start DESKTOP_SESSION=$DESKTOP_SESSION
+
+# Don't wait to avoid blocking the session from ending.
+pre-stop exec initctl emit --no-wait desktop-end DESKTOP_SESSION=$DESKTOP_SESSION
+
+post-stop exec dbus-send --type=method_call --address=$UPSTART_SESSION /com/ubuntu/Upstart com.ubuntu.Upstart0_6.EndSession

@@ -1,0 +1,34 @@
+From 4daf68ebb6991194848756ff4f05a3ed736118bb Mon Sep 17 00:00:00 2001
+From: Eric Koegel <eric.koegel@gmail.com>
+Date: Mon, 20 Oct 2014 08:17:13 +0300
+Subject: [PATCH] Export XDG_CURRENT_DESKTOP (Bug #11239)
+
+We already have been using XDG_CURRENT_DESKTOP in things such as
+garcon and other libraries but xfce4-session hasn't been setting
+it if it was left unset. This is now used by things like QT5 for
+theme decorations. Patch provided in:
+https://forum.manjaro.org/index.php?topic=13728
+---
+ scripts/xinitrc.in.in | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/scripts/xinitrc.in.in b/scripts/xinitrc.in.in
+index c67232e..b234407 100755
+--- a/scripts/xinitrc.in.in
++++ b/scripts/xinitrc.in.in
+@@ -22,6 +22,12 @@ if test "x$DESKTOP_SESSION" = "x"; then
+   export DESKTOP_SESSION
+ fi
+ 
++# set XDG_CURRENT_DESKTOP so that Qt 5 applications can identify user set Xfce theme
++if test "x$XDG_CURRENT_DESKTOP" = "x"; then
++  XDG_CURRENT_DESKTOP="XFCE"
++  export XDG_CURRENT_DESKTOP
++fi
++
+ # $XDG_CONFIG_HOME defines the base directory relative to which user specific
+ # configuration files should be stored. If $XDG_CONFIG_HOME is either not set
+ # or empty, a default equal to $HOME/.config should be used.
+-- 
+2.1.1
+
