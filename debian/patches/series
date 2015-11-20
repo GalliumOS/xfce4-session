@@ -5,3 +5,4 @@ xubuntu_git_Make_verbose_logging_conditional.patch
 slimlock.patch
 remove_hibernate_button_from_logout.patch
 remove_border_from_logout.patch
+run_xfsettingsd.patch
