@@ -1,4 +1,10 @@
-xfce4-session (4.12.1-1ubuntu9) vivid-proposed; urgency=medium
+xfce4-session (4.12.1-1ubuntu2-galliumos1) vivid-proposed; urgency=medium
+
+  * Removed slimlock patch
+
+ -- Hugh Greenberg <hugh@galliumos.org>  Thu, 17 Dec 2015 03:24:39 -0400
+
+xfce4-session (4.12.1-1ubuntu10) vivid-proposed; urgency=medium
 
   * Patch to run xfsettingsd before xfce4-session
 
