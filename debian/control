@@ -21,7 +21,7 @@ Architecture: any
 Breaks: xfce4-utils
 Replaces: xfce4-utils
 Pre-Depends: ${misc:Pre-Depends}, multiarch-support
-Depends: ${shlibs:Depends}, ${misc:Depends}, xfce4-settings (>= 4.10.0), xfconf
+Depends: ${shlibs:Depends}, ${misc:Depends}, xfce4-settings (>= 4.10.0), xfconf, util-linux
 Recommends: xfwm4, xfdesktop4, libpam-systemd [linux-any], systemd-shim | systemd-sysv [linux-any], upower, dbus-x11, x11-xserver-utils,
  xscreensaver | light-locker
 Suggests: sudo, fortunes-mod
