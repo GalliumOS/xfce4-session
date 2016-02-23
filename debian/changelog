@@ -1,3 +1,9 @@
+xfce4-session (4.12.1-1ubuntu2-galliumos2) vivid-proposed; urgency=medium
+
+  * Set the io priority of xfce4-session and xfsettingsd
+
+ -- Hugh Greenberg <hugh@galliumos.org>  Mon, 22 Feb 2016 03:24:39 -0400
+
 xfce4-session (4.12.1-1ubuntu2-galliumos1) vivid-proposed; urgency=medium
 
   * Removed slimlock patch
