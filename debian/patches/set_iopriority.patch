@@ -1,0 +1,15 @@
+--- a/scripts/xinitrc.in.in
++++ b/scripts/xinitrc.in.in
+@@ -106,10 +106,10 @@
+     fi
+   else
+     # start xfsettingsd
+-    xfsettingsd&
++    ionice -c 2 -n 7 xfsettingsd&
+ 
+     # start xfce4-session normally
+-    xfce4-session
++    ionice -c 2 -n 7 xfce4-session
+   fi
+ 
+   exit 0
