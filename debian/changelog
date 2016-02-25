@@ -1,4 +1,4 @@
-xfce4-session (4.12.1-1ubuntu2-galliumos2) vivid-proposed; urgency=medium
+xfce4-session (4.12.1-1ubuntu2-galliumos3) vivid-proposed; urgency=medium
 
   * Set the io priority of xfce4-session and xfsettingsd
 
