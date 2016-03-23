@@ -1,5 +1,8 @@
 #!/usr/bin/make -f
 
+# get the various DEB_BUILD/DEB_HOST variables
+include /usr/share/dpkg/architecture.mk
+
 export DEB_LDFLAGS_MAINT_APPEND=-Wl,-z,defs -Wl,--as-needed -Wl,-O1
 export DEB_BUILD_MAINT_OPTIONS=hardening=+all
 
@@ -11,8 +14,14 @@ override_dh_install:
 override_dh_strip:
 	dh_strip --dbg-package=xfce4-session-dbg
 
+# default backend for Linux and Hurd
+BACKEND=linux
+ifeq ($(DEB_BUILD_ARCH_OS),kfreebsd)
+	BACKEND=freebsd
+endif
+
 override_dh_auto_configure:
-	dh_auto_configure -- --disable-silent-rules --disable-legacy-sm
+	dh_auto_configure -- --disable-silent-rules --disable-legacy-sm --with-backend=$(BACKEND)
 
 override_dh_autoreconf:
 	NOCONFIGURE=1 dh_autoreconf xdt-autogen

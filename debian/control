@@ -21,10 +21,10 @@ Architecture: any
 Breaks: xfce4-utils
 Replaces: xfce4-utils
 Pre-Depends: ${misc:Pre-Depends}, multiarch-support
-Depends: ${shlibs:Depends}, ${misc:Depends}, xfce4-settings (>= 4.10.0), xfconf, util-linux
+Depends: ${shlibs:Depends}, ${misc:Depends}, xfce4-settings (>= 4.10.0), xfconf
 Recommends: xfwm4, xfdesktop4, libpam-systemd [linux-any], systemd-shim | systemd-sysv [linux-any], upower, dbus-x11, x11-xserver-utils,
  xscreensaver | light-locker
-Suggests: sudo, fortunes-mod
+Suggests: sudo, fortunes-mod, pm-utils
 Provides: x-session-manager
 Description: Xfce4 Session Manager
  xfce4-session is an X11-compliant "session manager" designed for use with

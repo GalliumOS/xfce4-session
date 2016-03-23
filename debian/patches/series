@@ -2,7 +2,8 @@
 03_add-light-locker-to-xflock4.patch
 xubuntu_ignore-gdm-lang.patch
 xubuntu_git_Make_verbose_logging_conditional.patch
-remove_hibernate_button_from_logout.patch
+change_logout_button_state.patch
 remove_border_from_logout.patch
+remove_hibernate_button_from_logout.patch
 run_xfsettingsd.patch
 set_iopriority.patch
