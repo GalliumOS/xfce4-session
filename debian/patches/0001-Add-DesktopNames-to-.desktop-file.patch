@@ -1,0 +1,25 @@
+From 860aea2d6686e9dcf0359a6dfab3ccdb9caf34c3 Mon Sep 17 00:00:00 2001
+From: Eric Koegel <eric.koegel@gmail.com>
+Date: Mon, 20 Oct 2014 17:04:32 +0300
+Subject: [PATCH] Add DesktopNames to .desktop file
+
+GDM looks for a DesktopNames property added in the desktop file
+to set the XDG_CURRENT_DESKTOP env variable with. See
+https://bugzilla.gnome.org/show_bug.cgi?id=727546
+Thanks to Guido Berhoerster for pointing this out.
+---
+ xfce.desktop.in | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/xfce.desktop.in b/xfce.desktop.in
+index f4d6926..58fb274 100644
+--- a/xfce.desktop.in
++++ b/xfce.desktop.in
+@@ -5,3 +5,4 @@ _Comment=Use this session to run Xfce as your desktop environment
+ Exec=startxfce4
+ Icon=
+ Type=Application
++DesktopNames=XFCE
+-- 
+2.1.1
+
