@@ -1,5 +1,6 @@
 01_fix-xrdb-call.patch
 03_add-light-locker-to-xflock4.patch
+04-use-debian-xscreensaver-wrapper.patch
 xubuntu_ignore-gdm-lang.patch
 xubuntu_git_Make_verbose_logging_conditional.patch
 change_logout_button_state.patch

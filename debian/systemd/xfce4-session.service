@@ -1,0 +1,7 @@
+[Unit]
+Description=XFCE 4 Session Manager
+PartOf=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/startxfce4
+ExecStopPost=-/usr/bin/dbus-send --type=method_call --address=${UPSTART_SESSION} /com/ubuntu/Upstart com.ubuntu.Upstart0_6.EndSession

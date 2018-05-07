@@ -1,0 +1,17 @@
+Description: xscreensaver ships a wrapper that checks what DM is running,
+ and conditionally uses either dm-tool or gdmflexiserver.
+
+Author: Unit 193 <unit193@ubuntu.com>
+Forwarded: not-needed
+Last-Update: 2016-09-21
+
+--- xfce4-session-4.12.1.orig/scripts/xscreensaver.desktop.in
++++ xfce4-session-4.12.1/scripts/xscreensaver.desktop.in
+@@ -4,6 +4,6 @@ Type=Application
+ _Name=Screensaver
+ _Comment=Launch screensaver and locker program
+ Icon=preferences-desktop-screensaver
+-Exec=xscreensaver -no-splash
++Exec=/usr/share/xscreensaver/xscreensaver-wrapper.sh -no-splash
+ TryExec=xscreensaver
+ OnlyShowIn=XFCE;

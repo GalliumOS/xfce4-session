@@ -1,0 +1,22 @@
+#!/bin/sh
+set -e
+
+# robustness: if the previous graphical session left some failed units,
+# reset them so that they don't break this startup
+for unit in $(systemctl --user --no-legend --state=failed list-units | cut -f1 -d' '); do
+if [ "$(systemctl --user show -p PartOf --value)" = "graphical-session.target" ]; then
+    systemctl --user reset-failed $unit
+fi
+done
+
+systemctl --user restart graphical-session-pre.target
+systemctl --user restart "$1"
+
+# Wait until the session gets closed
+# FIXME: replace with an event-based waiting instead of polling (needs new systemctl functionality)
+while systemctl --user --quiet is-active "$1"; do sleep 1; done
+
+# Delay killing the X server until all graphical units stopped
+# FIXME: we currently cannot make targets wait on its dependencies going to
+# "inactive", only to "deactivating"
+while [ -n "$(systemctl --user --no-legend --state=deactivating list-units)" ]; do sleep 0.2; done
