@@ -1,3 +1,19 @@
+xfce4-session (4.12.1-3ubuntu3) devel; urgency=medium
+
+  * d/p/04-use-debian-xscreensaver-wrapper.patch:
+    - xscreensaver ships a wrapper that checks what DM is running,
+      and conditionally uses either dm-tool or gdmflexiserver.
+
+ -- Unit 193 <unit193@ubuntu.com>  Wed, 21 Sep 2016 21:15:34 -0400
+
+xfce4-session (4.12.1-3ubuntu2) yakkety; urgency=medium
+
+  * Add systemd user session. Note that this is not active for the XFCE
+    session right now, it will just be used for xubuntu-default-setting's
+    Xubuntu session.
+
+ -- Martin Pitt <martin.pitt@ubuntu.com>  Mon, 25 Jul 2016 22:12:13 +0200
+
 xfce4-session (4.12.1-3ubuntu1) wily; urgency=low
 
   * Merge from Debian unstable.  Remaining changes:

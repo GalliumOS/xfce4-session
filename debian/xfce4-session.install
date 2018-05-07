@@ -2,3 +2,6 @@ usr
 etc
 debian/defaults.list etc/xfce4/
 debian/55xfce4-session etc/X11/Xsession.d/
+debian/systemd/xfce4-session.service /usr/lib/systemd/user/
+debian/systemd/run-systemd-session /usr/share/xfce4/scripts/
+debian/systemd/startxfce4.override /usr/share/upstart/systemd-session/upstart/
